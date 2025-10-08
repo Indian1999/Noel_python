@@ -49,6 +49,7 @@ while True:
         szövegek.append(szöveg)
 
 print(szövegek)
+"""
 
 num = 0
 while num < 11:
@@ -57,13 +58,12 @@ while num < 11:
         continue    # Következő ciklus iterációra lépünk
     print(num)
 
-"""
 
 
 
 
 # Programozási tételek:
-lista = [3,2,29,3,2,12,-5,-9, 12, 34,-19, 0, 2, 12, -9, 13, 15, 23]
+lista = [3, 2, 13, 29,3,2,12,-5,-9, 12, 34,-19, 0, 2, 12, 39, -9, 13, 15, 23]
 
 for i in range(len(lista)):
     print(lista[i], end= " ")
@@ -85,4 +85,39 @@ for item in lista:
 
 # Hány negatív szám van a listában?
 
-# Van-e a listában 13-mal osztható szám?
+# Van-e a listában 13-mal osztható szám? 
+
+oszthato13mal = False
+for item in lista:
+    if item % 13 == 0:
+        oszthato13mal = True
+        break
+print("Van 13-mal osztható:", oszthato13mal)
+
+
+# Feladat: Szedjük szét a listában található elemeket poz és negatív értékekre
+
+pozLista = []
+negLista = []
+for item in lista:
+    if item < 0:
+        negLista.append(item)
+    elif item > 0:
+        pozLista.append(item)
+
+print(pozLista)
+print(negLista)
+
+# Feladat: Határozzuk meg a listában a páratlan számok összegét (Feltételes összegzés)
+összeg = 0
+for item in lista:
+    if item % 2 == 1:
+        összeg += item
+
+print("A páratlan számok összege:", összeg)
+
+poz_összeg = 0
+for item in pozLista:
+    poz_összeg += item
+
+print("A pozitív számok összeg:", poz_összeg)
