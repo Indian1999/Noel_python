@@ -81,6 +81,35 @@ elif a < 0:
 else:
     print("nulla")
 
+# 2. feladat: Kérj be egy számot és írd ki, hogy páros vagy páratlan
+num = int(input("Adj meg egy egész számot: "))
+if num == 0:
+    print("nulla")
+elif num % 2 == 0:
+    print("páros")
+else:
+    print("páratlan")
+
+# 3. feladat: Kérjük be egy háromszög 3 oldalának a hosszát
+# Írjuk ki, hogy milyen típusú ez a háromszög
+# (Derékszögű, egyenlő szárú, szabályos, általános, nem létezik)
+
+
+# 4. feladat: Kérjük be egy dolgozat eredményét (0-100 int), írjuk ki
+# az osztályzatot (90%-tól 5-ös, 75% - 4, 60% - 3, 40% - 2)
+
+
+# 5. feladat: Kérjünk be egy évszámot (int), döntsük el, hogy szökőév-e
+year = int(input("Adj meg egy évszámot: "))
+if year % 400 == 0:
+    print("Szökőév")
+elif year % 100 == 0:
+    print("nem szökőév")
+elif year % 4 == 0:
+    print("szökőév")
+else:
+    print("nem szökőév")
+
 
 
 
