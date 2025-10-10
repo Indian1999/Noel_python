@@ -77,16 +77,41 @@ items = sor.split(";")
 print(items) # ['alma', '16', 'Peti', '99', '800', 'True']
 
 # 1. feladat: Kérjünk be egy szöveget, és mentsük el egy változóba
+szöveg = input("Írj egy szöveget!\n")
+szöveg = szöveg.strip()
 
 # 2. feladat: Írjuk ki ennek a szövegnek a hosszát
+print(f"A szöveg hossza {len(szöveg)} karakter.")
 
 # 3. feladat: Írjuk ki a szöveget visszafelé
+print("A szöveg visszafelé:", szöveg[::-1])
 
 # 4. feladat: Kérjünk be egy új stringet és számoljuk, hogy az hányszor szerepel az eredetiben
+substring = "a" #input("Adj meg egy rész-szöveget: ")
+print(f"Ez a rész-szöveg {szöveg.count(substring)} alkalommal szerepel a szövegben.")
 
 # 5. feladat: Számoljuk meg, hogy hány szó szerepel a szövegben.
+while szöveg != szöveg.replace("  ", " "):
+    szöveg = szöveg.replace("  ", " ")
+space_count = szöveg.count(" ")
+print(f"A szövegben {space_count + 1} szó található.")
 
 # 6. feladat: Számold meg, hogy hány magánhangzó szerepel a szövegben.
+vowels = "öüóűúőoiueaéáíÓÜÖŰÚŐOIUEÁÉAÍ"
+counter = 0
+for char in szöveg:
+    if char in vowels:
+        counter += 1
+print("A magánhangzók száma a szövegben:", counter)
 
 # 7. feladat: Döntsük el a szövegről, hogy palindróm-e!
 # Palindrom, ugyan az előre olvasva mint hátra (pl.: kajak, Indul a görög aludni)
+szöveg = szöveg.lower()
+szöveg = szöveg.replace(" ", "")
+special_chars = ".,?!-:;*'+)(=/\")"
+for char in special_chars:
+    szöveg = szöveg.replace(char, "")
+if szöveg == szöveg[::-1]:
+    print("Ez egy palindróm")
+else:
+    print("Nem palindróm")
