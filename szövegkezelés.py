@@ -76,3 +76,17 @@ sor = "alma;16;Peti;99;800;True"
 items = sor.split(";")
 print(items) # ['alma', '16', 'Peti', '99', '800', 'True']
 
+# 1. feladat: Kérjünk be egy szöveget, és mentsük el egy változóba
+
+# 2. feladat: Írjuk ki ennek a szövegnek a hosszát
+
+# 3. feladat: Írjuk ki a szöveget visszafelé
+
+# 4. feladat: Kérjünk be egy új stringet és számoljuk, hogy az hányszor szerepel az eredetiben
+
+# 5. feladat: Számoljuk meg, hogy hány szó szerepel a szövegben.
+
+# 6. feladat: Számold meg, hogy hány magánhangzó szerepel a szövegben.
+
+# 7. feladat: Döntsük el a szövegről, hogy palindróm-e!
+# Palindrom, ugyan az előre olvasva mint hátra (pl.: kajak, Indul a görög aludni)
