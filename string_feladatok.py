@@ -31,3 +31,18 @@ print(hanyadik)
 # Minden nagy karaktert alakítsunk kisbetűsre
 # A szöveg első felét helyezzük át a string elejéről a végére
 # Írjuk ki az így kapott szöveget
+
+új_szöveg = szöveg.replace("a", "@")
+új_szöveg = új_szöveg.replace("A", "@")
+új_szöveg = új_szöveg.replace("t", "!")
+új_szöveg = új_szöveg.replace("T", "!")
+új_szöveg = új_szöveg.replace("e", "3")
+új_szöveg = új_szöveg.replace("E", "3")
+új_szöveg = új_szöveg.replace("o", "0")
+új_szöveg = új_szöveg.replace("O", "0")
+új_szöveg = új_szöveg.replace("u", "v")
+új_szöveg = új_szöveg.replace("U", "v")
+új_szöveg = új_szöveg.lower()
+hossz = len(új_szöveg)
+új_szöveg = új_szöveg[hossz//2:] + új_szöveg[:hossz//2]
+print(új_szöveg)
