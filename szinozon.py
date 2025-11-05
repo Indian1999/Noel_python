@@ -24,7 +24,7 @@ def ask_player(puzzle):
         print("Jó számok, de rossz helyen:", jo_szamok_rossz_helyen)
         return True
 
-def game():
+def master_mind():
     puzzle = generate_puzzle()
     gameOn = True
     tippek = 0
@@ -33,8 +33,3 @@ def game():
         tippek += 1
     print(f"Szép volt! {tippek} lépésből rájöttél, hogy a megoldás {puzzle} volt.")
 
-while True:
-    game()
-    answer = input("Akarsz játszani mégegyet (igen/nem)?\n")
-    if answer == "nem":
-        break
