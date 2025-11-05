@@ -67,9 +67,74 @@ print(type(41))   # <class 'int'>
 print(type(41.0)) # <class 'float'>
 
 # 9.a: Mennyi idő alatt teljesítette a távot Elemér?
+elemér_index = None
+for i in range(len(nevek)):
+    if nevek[i] == "Elemér":
+        elemér_index = i
+
+if elemér_index != None:
+    print(f"{nevek[elemér_index]} {eredmények[elemér_index]} mp alatt teljesítetet a távot.")
+else:
+    print("Nincs ilyen nevű versenyző")
 
 # 9.b: Ki nyerte a versenyt?
+min_index = 0 # Az elején azt feltételezem, hogy a 0. szám a legkisebb
+for i in range(1, len(eredmények)): # i = 1, 2, 3, 4, 5, 6, 7
+    if eredmények[i] < eredmények[min_index]:
+        min_index = i
+
+print(f"A versenyt {nevek[min_index]} nyerte, {eredmények[min_index]} mp alatt teljesítette a távot.")
 
 # 9.c: Ki futott be utoljára?
+max_index = 0
+for i in range(1, len(eredmények)):
+    if eredmények[i] > eredmények[max_index]:
+        max_index = i
 
-# 9.d: Írjuk ki az első három helyezett nevét (és hogy hanyadik lett)!
+print(f"Utolsónak {nevek[max_index]} végzett, {eredmények[max_index]} mp alatt teljesítette a távot.")
+
+# 9.d: Írjuk ki azoknak a nevét és idejét, akik az átlagtól gyorsabban teljesítették a távot
+osszeg = 0
+for item in eredmények:
+    osszeg += item
+atlag = osszeg / len(eredmények)
+print("Az időeredmények átlaga:", round(atlag, 2))
+print("Az emberek akik az átlagtól gyorsabbak voltak:")
+for i in range(len(eredmények)):
+    if eredmények[i] < atlag:
+        print(nevek[i], eredmények[i], "mp")
+
+
+# 9.e: Írjuk ki az első három helyezett nevét (és hogy hanyadik lett)!
+eredmények_copy = eredmények[:]
+
+elso_index = 0
+for i in range(1, len(eredmények_copy)):
+    if eredmények_copy[i] < eredmények_copy[elso_index]:
+        elso_index = i
+eredmények_copy[elso_index] = float("inf") # végtelenre állítom
+
+masodik_index = 0
+for i in range(1, len(eredmények_copy)):
+    if eredmények_copy[i] < eredmények_copy[masodik_index]:
+        masodik_index = i
+eredmények_copy[masodik_index] = float("inf")
+
+harmadik_index = 0
+for i in range(1, len(eredmények_copy)):
+    if eredmények_copy[i] < eredmények_copy[harmadik_index]:
+        harmadik_index = i
+eredmények_copy[harmadik_index] = float("inf")
+
+print(f"1. helyezett: {nevek[elso_index]} ({eredmények[elso_index]} mp)")
+print(f"2. helyezett: {nevek[masodik_index]} ({eredmények[masodik_index]} mp)")
+print(f"3. helyezett: {nevek[harmadik_index]} ({eredmények[harmadik_index]} mp)")
+
+# 9.f: Kik voltak gyorsabbak Gábornál?
+gabor_index = nevek.index("Gábor")
+gabor_ido = eredmények[gabor_index]
+
+print("Gábortól gyorsabb emberek:")
+for i in range(len(eredmények)):
+    if eredmények[i] < gabor_ido:
+        print(nevek[i])
