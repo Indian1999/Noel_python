@@ -1,9 +1,9 @@
 from szinozon import master_mind
-
+from tic_tac_toe import tic_tac_toe
 print("Üdvözöllek a játék launcherben!")
 print("Játékok:")
 print("1: Színözön")
-print("2: Fortninte")
+print("2: Tic Tac Toe")
 print("3: Minecraft")
 print("4: Roblox")
 print("5: Factorio")
@@ -22,3 +22,5 @@ if answer == "1":
         master_mind(1, 9, 5)
     elif difficulty == "5":
         master_mind(1, 9, 6)
+if answer == "2":
+    tic_tac_toe()
